@@ -9,23 +9,24 @@
 /* Begin PBXBuildFile section */
 		274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */; };
 		274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */; };
-		274E36A21FF4E8BD004F35F3 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36A11FF4E8BD004F35F3 /* MasterViewController.swift */; };
-		274E36A41FF4E8BD004F35F3 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36A31FF4E8BD004F35F3 /* DetailViewController.swift */; };
 		274E36A71FF4E8BD004F35F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274E36A51FF4E8BD004F35F3 /* Main.storyboard */; };
 		274E36A91FF4E8BD004F35F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274E36A81FF4E8BD004F35F3 /* Assets.xcassets */; };
 		274E36AC1FF4E8BD004F35F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274E36AA1FF4E8BD004F35F3 /* LaunchScreen.storyboard */; };
+		274E36B51FF4EA45004F35F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274E36B41FF4EA45004F35F3 /* Info.plist */; };
+		274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */; };
+		274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		274E36991FF4E8BD004F35F3 /* StickyScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274E369F1FF4E8BD004F35F3 /* StickyScores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StickyScores.xcdatamodel; sourceTree = "<group>"; };
-		274E36A11FF4E8BD004F35F3 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		274E36A31FF4E8BD004F35F3 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		274E36A61FF4E8BD004F35F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		274E36A81FF4E8BD004F35F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		274E36AB1FF4E8BD004F35F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		274E36AD1FF4E8BD004F35F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		274E36B41FF4EA45004F35F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StickyScores/Info.plist; sourceTree = "<group>"; };
+		274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGameCollectionViewController.swift; sourceTree = "<group>"; };
+		274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGamesTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +44,7 @@
 			isa = PBXGroup;
 			children = (
 				274E369B1FF4E8BD004F35F3 /* StickyScores */,
+				274E36B41FF4EA45004F35F3 /* Info.plist */,
 				274E369A1FF4E8BD004F35F3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -59,15 +61,22 @@
 			isa = PBXGroup;
 			children = (
 				274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */,
-				274E36A11FF4E8BD004F35F3 /* MasterViewController.swift */,
-				274E36A31FF4E8BD004F35F3 /* DetailViewController.swift */,
+				274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */,
+				274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */,
 				274E36A51FF4E8BD004F35F3 /* Main.storyboard */,
-				274E36A81FF4E8BD004F35F3 /* Assets.xcassets */,
-				274E36AA1FF4E8BD004F35F3 /* LaunchScreen.storyboard */,
-				274E36AD1FF4E8BD004F35F3 /* Info.plist */,
 				274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */,
+				274E36B31FF4E9B3004F35F3 /* Supporting files */,
 			);
 			path = StickyScores;
+			sourceTree = "<group>";
+		};
+		274E36B31FF4E9B3004F35F3 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				274E36A81FF4E8BD004F35F3 /* Assets.xcassets */,
+				274E36AA1FF4E8BD004F35F3 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +138,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274E36B51FF4EA45004F35F3 /* Info.plist in Resources */,
 				274E36AC1FF4E8BD004F35F3 /* LaunchScreen.storyboard in Resources */,
 				274E36A91FF4E8BD004F35F3 /* Assets.xcassets in Resources */,
 				274E36A71FF4E8BD004F35F3 /* Main.storyboard in Resources */,
@@ -142,10 +152,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */,
+				274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */,
 				274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */,
 				274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */,
-				274E36A21FF4E8BD004F35F3 /* MasterViewController.swift in Sources */,
-				274E36A41FF4E8BD004F35F3 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
