@@ -17,7 +17,12 @@ class AJGamesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loadData()
+    }
+    
+    private func loadData() {
         getData()
+        tableView.reloadData()
     }
     
     private func getData() {
@@ -113,5 +118,9 @@ class AJGamesTableViewController: UITableViewController {
         }
     }
  
-
+    @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
+        _ = dataController.newGame(withName: "new game")
+        loadData()
+    }
+    
 }
