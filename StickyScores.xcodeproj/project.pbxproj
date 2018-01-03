@@ -15,6 +15,10 @@
 		274E36B51FF4EA45004F35F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274E36B41FF4EA45004F35F3 /* Info.plist */; };
 		274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */; };
 		274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */; };
+		27667DE61FFD0008001058CE /* AJGame+PropertiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DE51FFD0008001058CE /* AJGame+PropertiesExtension.swift */; };
+		27667DE81FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DE71FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift */; };
+		27667DEA1FFD01DE001058CE /* AJScore+PropertiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DE91FFD01DE001058CE /* AJScore+PropertiesExtension.swift */; };
+		27667DEC1FFD026C001058CE /* AJDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DEB1FFD026C001058CE /* AJDataController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +31,10 @@
 		274E36B41FF4EA45004F35F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StickyScores/Info.plist; sourceTree = "<group>"; };
 		274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGameCollectionViewController.swift; sourceTree = "<group>"; };
 		274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGamesTableViewController.swift; sourceTree = "<group>"; };
+		27667DE51FFD0008001058CE /* AJGame+PropertiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AJGame+PropertiesExtension.swift"; sourceTree = "<group>"; };
+		27667DE71FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AJPlayer+PropertiesExtension.swift"; sourceTree = "<group>"; };
+		27667DE91FFD01DE001058CE /* AJScore+PropertiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AJScore+PropertiesExtension.swift"; sourceTree = "<group>"; };
+		27667DEB1FFD026C001058CE /* AJDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJDataController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +69,10 @@
 			isa = PBXGroup;
 			children = (
 				274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */,
+				27667DEB1FFD026C001058CE /* AJDataController.swift */,
 				274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */,
 				274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */,
+				27667DED1FFD0698001058CE /* PropertyExtensions */,
 				274E36A51FF4E8BD004F35F3 /* Main.storyboard */,
 				274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */,
 				274E36B31FF4E9B3004F35F3 /* Supporting files */,
@@ -77,6 +87,16 @@
 				274E36AA1FF4E8BD004F35F3 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		27667DED1FFD0698001058CE /* PropertyExtensions */ = {
+			isa = PBXGroup;
+			children = (
+				27667DE51FFD0008001058CE /* AJGame+PropertiesExtension.swift */,
+				27667DE71FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift */,
+				27667DE91FFD01DE001058CE /* AJScore+PropertiesExtension.swift */,
+			);
+			name = PropertyExtensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,7 +172,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27667DE61FFD0008001058CE /* AJGame+PropertiesExtension.swift in Sources */,
+				27667DEA1FFD01DE001058CE /* AJScore+PropertiesExtension.swift in Sources */,
+				27667DEC1FFD026C001058CE /* AJDataController.swift in Sources */,
 				274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */,
+				27667DE81FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift in Sources */,
 				274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */,
 				274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */,
 				274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */,

@@ -22,9 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         navigationController.topViewController!.navigationItem.leftBarButtonItem = splitViewController.displayModeButtonItem
         splitViewController.delegate = self
 
-        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
-        let controller = masterNavigationController.topViewController as! AJGamesTableViewController
+//        let masterNavigationController = splitViewController.viewControllers[0] as! UINavigationController
+//        let controller = masterNavigationController.topViewController as! AJGamesTableViewController
 //        controller.managedObjectContext = self.persistentContainer.viewContext
+        
+        
+        // insert data
+        
+        let dataController = AJDataController()
+        let gamesArray = dataController.getGames()
+        _ = dataController.newGame(withId: Int16(gamesArray.count), andName: "Game\(gamesArray.count)")
+        
+        // get data
+        for fetchedGame in dataController.getGames() {
+            fetchedGame.printDescription()
+        }
+        
         return true
     }
 
@@ -55,8 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: - Split view
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-        guard let topAsDetailController = secondaryAsNavController.topViewController as? AJGameCollectionViewController else { return false }
+//        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+//        guard let topAsDetailController = secondaryAsNavController.topViewController as? AJGameCollectionViewController else { return false }
 //        if topAsDetailController.detailItem == nil {
 //            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
 //            return true
