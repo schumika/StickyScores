@@ -28,6 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         
         
 //        // insert data
+//        _ = dataController.newGame(withName: "Game")
 //        
 //        // get data
 //        for fetchedGame in dataController.getGames() {
