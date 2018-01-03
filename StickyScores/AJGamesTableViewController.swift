@@ -109,8 +109,7 @@ class AJGamesTableViewController: UITableViewController {
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+
         if let navCon = segue.destination as? UINavigationController {
             if let gameVC = navCon.topViewController as? AJGameCollectionViewController {
                 gameVC.game = selectedGame
@@ -119,8 +118,24 @@ class AJGamesTableViewController: UITableViewController {
     }
  
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
-        _ = dataController.newGame(withName: "new game")
-        loadData()
+        let alert = UIAlertController(title: "Add new game", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addTextField { (textfield) in
+            textfield.becomeFirstResponder()
+        }
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+            if let textField = alert.textFields?[0] {
+                if let eneteredText = textField.text {
+                    _ = self?.dataController.newGame(withName: eneteredText)
+                    
+                    DispatchQueue.main.async {
+                        self?.loadData()
+                    }
+                }
+            }
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+        present(alert, animated: true, completion: nil)
     }
     
 }
