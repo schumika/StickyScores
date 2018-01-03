@@ -9,43 +9,61 @@
 import UIKit
 
 class AJGamesTableViewController: UITableViewController {
+    
+    var dataController: AJDataController = (UIApplication.shared.delegate as! AppDelegate).dataController
+    private var games: [AJGame]?
+    private var selectedGame: AJGame?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        getData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private func getData() {
+        games = dataController.getGames()
+        
+        if games != nil {
+            for fetchedGame in games! {
+                fetchedGame.printDescription()
+            }
+        }
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return 0
+//    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return games!.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
 
         // Configure the cell...
+        var gameName = ""
+        if let game = games?[indexPath.row] {
+            gameName = "\(game.id) -- \(game.name ?? "")"
+        }
+        cell.textLabel?.text = gameName
 
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        selectedGame = games?[indexPath.row]
+        return indexPath
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+ 
 
     /*
     // Override to support conditional editing of the table view.
@@ -82,14 +100,18 @@ class AJGamesTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if let navCon = segue.destination as? UINavigationController {
+            if let gameVC = navCon.topViewController as? AJGameCollectionViewController {
+                gameVC.game = selectedGame
+            }
+        }
     }
-    */
+ 
 
 }

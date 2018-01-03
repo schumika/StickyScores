@@ -13,7 +13,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
 
     var window: UIWindow?
-
+    lazy var dataController = AJDataController()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,16 +27,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 //        controller.managedObjectContext = self.persistentContainer.viewContext
         
         
-        // insert data
-        
-        let dataController = AJDataController()
-        let gamesArray = dataController.getGames()
-        _ = dataController.newGame(withId: Int16(gamesArray.count), andName: "Game\(gamesArray.count)")
-        
-        // get data
-        for fetchedGame in dataController.getGames() {
-            fetchedGame.printDescription()
-        }
+//        // insert data
+//        _ = dataController.newGame(withName: "Game")
+//        
+//        // get data
+//        for fetchedGame in dataController.getGames() {
+//            fetchedGame.printDescription()
+//        }
         
         return true
     }
@@ -68,12 +65,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     // MARK: - Split view
 
     func splitViewController(_ splitViewController: UISplitViewController, collapseSecondary secondaryViewController:UIViewController, onto primaryViewController:UIViewController) -> Bool {
-//        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
-//        guard let topAsDetailController = secondaryAsNavController.topViewController as? AJGameCollectionViewController else { return false }
-//        if topAsDetailController.detailItem == nil {
-//            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
-//            return true
-//        }
+        guard let secondaryAsNavController = secondaryViewController as? UINavigationController else { return false }
+        guard let topAsDetailController = secondaryAsNavController.topViewController as? AJGameCollectionViewController else { return false }
+        if topAsDetailController.game == nil {
+            // Return true to indicate that we have handled the collapse by doing nothing; the secondary controller will be discarded.
+            return true
+        }
         return false
     }
     // MARK: - Core Data stack

@@ -68,12 +68,12 @@
 		274E369B1FF4E8BD004F35F3 /* StickyScores */ = {
 			isa = PBXGroup;
 			children = (
+				274E36A51FF4E8BD004F35F3 /* Main.storyboard */,
 				274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */,
 				27667DEB1FFD026C001058CE /* AJDataController.swift */,
 				274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */,
 				274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */,
 				27667DED1FFD0698001058CE /* PropertyExtensions */,
-				274E36A51FF4E8BD004F35F3 /* Main.storyboard */,
 				274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */,
 				274E36B31FF4E9B3004F35F3 /* Supporting files */,
 			);

@@ -11,20 +11,11 @@ import UIKit
 import CoreData
 
 class AJDataController {
-    private var appDelegate: AppDelegate! {
-        get {
-            return UIApplication.shared.delegate as! AppDelegate
-        }
-    }
     
-    private var context: NSManagedObjectContext {
-        get {
-            return appDelegate.persistentContainer.viewContext
-        }
-    }
+    var context: NSManagedObjectContext  = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     func saveChanges() {
-        appDelegate.saveContext()
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
     }
     
     // get data
@@ -32,7 +23,9 @@ class AJDataController {
         var games = [AJGame]()
         
         do {
-            games = try context.fetch(AJGame.fetchRequest())
+            let gamesFetchRequest: NSFetchRequest<AJGame> = AJGame.fetchRequest()
+            gamesFetchRequest.sortDescriptors = [NSSortDescriptor.init(key: "id", ascending: false)]
+            games = try context.fetch(gamesFetchRequest)
         } catch {
             print("fetching failed")
         }
@@ -40,12 +33,17 @@ class AJDataController {
     }
     
     // insert data
-    func newGame(withId id:Int16, andName name: String) -> AJGame? {
+    private func newGame(withId id:Int16, andName name: String) -> AJGame? {
         let game = AJGame(context: context)
         game.id = id
         game.name = name
         saveChanges()
         
         return game
+    }
+    
+    func newGame(withName name: String) -> AJGame? {
+        let gamesCount = (try? context.count(for: AJGame.fetchRequest())) ?? 0
+        return newGame(withId: Int16(gamesCount), andName: name)
     }
 }

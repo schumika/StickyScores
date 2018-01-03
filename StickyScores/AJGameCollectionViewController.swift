@@ -13,17 +13,14 @@ private let reuseIdentifier = "ContentCell"
 class AJGameCollectionViewController: UICollectionViewController {
     
     var inputData = [Dictionary<String, Any>]()
+    var game: AJGame?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationItem.title = game?.name
 
         createInputData()
-    }
-
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     private func createInputData() {
