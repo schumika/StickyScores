@@ -27,12 +27,6 @@ class AJGamesTableViewController: UITableViewController {
     
     private func getData() {
         games = dataController.getGames()
-        
-        if games != nil {
-            for fetchedGame in games! {
-                fetchedGame.printDescription()
-            }
-        }
     }
 
     // MARK: - Table view data source
@@ -125,7 +119,8 @@ class AJGamesTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
             if let textField = alert.textFields?[0] {
                 if let eneteredText = textField.text {
-                    _ = self?.dataController.newGame(withName: eneteredText)
+                    let newGame = self?.dataController.newGame(withName: eneteredText)
+                    print(newGame?.description ?? "could not create new game")
                     
                     DispatchQueue.main.async {
                         self?.loadData()

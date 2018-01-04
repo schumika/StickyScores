@@ -10,7 +10,10 @@ import Foundation
 import CoreData
 
 extension AJGame {
-    public func printDescription() {
-        print("Game with name: \(name ?? "") and id: \(id)")
+    
+    public override var description: String {
+        get {
+            return "Game with name: \(name ?? "") and id: \(id)"
+        }
     }
 }
