@@ -43,7 +43,24 @@ class AJDataController {
     }
     
     func newGame(withName name: String) -> AJGame? {
-        let gamesCount = (try? context.count(for: AJGame.fetchRequest())) ?? 0
-        return newGame(withId: Int16(gamesCount), andName: name)
+        let gameId = getMaxGameId() + 1
+        return newGame(withId: Int16(gameId), andName: name)
+    }
+    
+    func getMaxGameId() -> Int16 {
+        var maxId: Int16 = 0
+        do {
+            let gamesFetchRequest: NSFetchRequest<AJGame> = AJGame.fetchRequest()
+            gamesFetchRequest.predicate = NSPredicate.init(format: "id=max(id)")
+            gamesFetchRequest.fetchLimit = 1
+            let games = try context.fetch(gamesFetchRequest)
+            if games.count > 0 {
+                maxId = games[0].id
+            }
+        } catch {
+            print("fetching failed")
+        }
+        
+        return maxId
     }
 }
