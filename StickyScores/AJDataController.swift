@@ -46,4 +46,10 @@ class AJDataController {
         let gamesCount = (try? context.count(for: AJGame.fetchRequest())) ?? 0
         return newGame(withId: Int16(gamesCount), andName: name)
     }
+    
+    // delete data
+    func deleteGame(game: AJGame) {
+        context.delete(game)
+        saveChanges()
+    }
 }
