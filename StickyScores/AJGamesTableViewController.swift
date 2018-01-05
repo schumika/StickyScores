@@ -129,7 +129,7 @@ class AJGamesTableViewController: UITableViewController {
         if gesture.state == .recognized {
             if let cell = gesture.view as? UITableViewCell {
                 let indexPath = tableView.indexPath(for: cell)
-                print("handling for view at \(String(describing: indexPath))")
+                
                 if let editedGame = games?[indexPath!.row] {
                     
                     let alert = UIAlertController(title: "Edit game name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
