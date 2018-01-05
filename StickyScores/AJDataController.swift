@@ -63,4 +63,10 @@ class AJDataController {
         
         return maxId
     }
+    
+    // delete data
+    func deleteGame(game: AJGame) {
+        context.delete(game)
+        saveChanges()
+    }
 }

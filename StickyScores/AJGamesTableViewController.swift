@@ -17,6 +17,12 @@ class AJGamesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         loadData()
     }
     
@@ -61,6 +67,8 @@ class AJGamesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        dataController.deleteGame(game: selectedGame!)
+        selectedGame = nil
     }
  
 
@@ -106,7 +114,7 @@ class AJGamesTableViewController: UITableViewController {
 
         if let navCon = segue.destination as? UINavigationController {
             if let gameVC = navCon.topViewController as? AJGameCollectionViewController {
-                gameVC.game = selectedGame
+                gameVC.game = nil//selectedGame
             }
         }
     }
