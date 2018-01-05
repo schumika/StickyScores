@@ -69,4 +69,10 @@ class AJDataController {
         context.delete(game)
         saveChanges()
     }
+    
+    // edit data
+    func changeGameName(_ game: AJGame, to newName: String) {
+        game.name = newName
+        saveChanges()
+    }
 }
