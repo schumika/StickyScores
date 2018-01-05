@@ -76,7 +76,12 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="okO-H1-dhX">
+                    <navigationItem key="navigationItem" title="StikyScores" id="okO-H1-dhX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="MVN-s3-hEa">
+                            <connections>
+                                <action selector="editButtonClicked:" destination="7bK-jq-Zjz" id="KvS-Kc-00n"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="25U-AF-Bkj">
                             <connections>
                                 <action selector="addButtonClicked:" destination="7bK-jq-Zjz" id="w4w-CD-ulk"/>

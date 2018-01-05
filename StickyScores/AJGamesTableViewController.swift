@@ -16,8 +16,6 @@ class AJGamesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //loadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,15 +33,10 @@ class AJGamesTableViewController: UITableViewController {
         games = dataController.getGames()
     }
 
-    // MARK: - Table view data source
-
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return 0
-//    }
+    // MARK: - Table view data source & delegate
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games!.count
+        return games != nil ? games!.count : 0
     }
 
     
@@ -67,45 +60,20 @@ class AJGamesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        dataController.deleteGame(game: selectedGame!)
         selectedGame = nil
     }
- 
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
+    
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+            if let gameToDelete = games?[indexPath.row] {
+                dataController.deleteGame(game: gameToDelete)
+                games = dataController.getGames()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+            }
+        }
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -119,6 +87,8 @@ class AJGamesTableViewController: UITableViewController {
         }
     }
  
+    // MARK: - Buttons Actions
+    
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add new game", message: nil, preferredStyle: UIAlertControllerStyle.alert)
         alert.addTextField { (textfield) in
@@ -139,6 +109,14 @@ class AJGamesTableViewController: UITableViewController {
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             
         present(alert, animated: true, completion: nil)
+    }
+    
+    @IBAction func editButtonClicked(_ sender: UIBarButtonItem) {
+        let editing =  tableView.isEditing
+        navigationItem.leftBarButtonItem = tableView.isEditing ?
+            UIBarButtonItem.init(title: "Edit", style: .plain, target: self, action:#selector(AJGamesTableViewController.editButtonClicked(_:))) :
+            UIBarButtonItem.init(title: "Done", style: .done, target: self, action:#selector(AJGamesTableViewController.editButtonClicked(_:)))
+        tableView.setEditing(!editing, animated: true)
     }
     
 }
