@@ -49,6 +49,12 @@ class AJGamesTableViewController: UITableViewController {
             gameName = "\(game.id) -- \(game.name ?? "")"
         }
         cell.textLabel?.text = gameName
+        
+        // add double tap gesture recogniser
+        let longTapGestureRecognizer = UILongPressGestureRecognizer.init(target: self, action: #selector(AJGamesTableViewController.handleCellLongTap(_:)))
+        longTapGestureRecognizer.cancelsTouchesInView = true
+        longTapGestureRecognizer.delaysTouchesBegan = true
+        cell.addGestureRecognizer(longTapGestureRecognizer)
 
         return cell
     }
@@ -87,7 +93,7 @@ class AJGamesTableViewController: UITableViewController {
         }
     }
  
-    // MARK: - Buttons Actions
+    // MARK: - Actions
     
     @IBAction func addButtonClicked(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Add new game", message: nil, preferredStyle: UIAlertControllerStyle.alert)
@@ -119,4 +125,39 @@ class AJGamesTableViewController: UITableViewController {
         tableView.setEditing(!editing, animated: true)
     }
     
+    @objc private func handleCellLongTap(_ gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .recognized {
+            if let cell = gesture.view as? UITableViewCell {
+                let indexPath = tableView.indexPath(for: cell)
+                print("handling for view at \(String(describing: indexPath))")
+                if let editedGame = games?[indexPath!.row] {
+                    
+                    let alert = UIAlertController(title: "Edit game name", message: nil, preferredStyle: UIAlertControllerStyle.alert)
+                    alert.addTextField { (textfield) in
+                        textfield.text = editedGame.name
+                        textfield.becomeFirstResponder()
+                    }
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+                        if let textField = alert.textFields?[0] {
+                            if let enteredText = textField.text {
+                                if (enteredText as NSString).length != 0 {
+                                    self?.dataController.changeGameName(editedGame, to: enteredText)
+                                    DispatchQueue.main.async {
+                                        self?.loadData()
+                                    }
+                                } else {
+                                    let errorAlert = UIAlertController(title: "Error", message: "Game name cannot be empty", preferredStyle: UIAlertControllerStyle.alert)
+                                    errorAlert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+                                    self?.present(errorAlert, animated: true, completion: nil)
+                                }
+                            }
+                        }
+                    }))
+                    alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+                    
+                    present(alert, animated: true, completion: nil)
+                }
+            }
+        }
+    }
 }
