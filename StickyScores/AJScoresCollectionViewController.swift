@@ -1,5 +1,5 @@
 //
-//  AJGameCollectionViewController.swift
+//  AJScoresCollectionViewController.swift
 //  StickyScores
 //
 //  Created by Anca Julean on 28/12/2017.
@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "ContentCell"
 
-class AJGameCollectionViewController: UICollectionViewController {
+class AJScoresCollectionViewController: UICollectionViewController {
     
     var inputData = [Dictionary<String, Any>]()
     var game: AJGame?

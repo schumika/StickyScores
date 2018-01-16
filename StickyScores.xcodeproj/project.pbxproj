@@ -13,7 +13,7 @@
 		274E36A91FF4E8BD004F35F3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 274E36A81FF4E8BD004F35F3 /* Assets.xcassets */; };
 		274E36AC1FF4E8BD004F35F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274E36AA1FF4E8BD004F35F3 /* LaunchScreen.storyboard */; };
 		274E36B51FF4EA45004F35F3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 274E36B41FF4EA45004F35F3 /* Info.plist */; };
-		274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */; };
+		274E36B91FF4ED66004F35F3 /* AJScoresCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36B81FF4ED66004F35F3 /* AJScoresCollectionViewController.swift */; };
 		274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */; };
 		27667DE61FFD0008001058CE /* AJGame+PropertiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DE51FFD0008001058CE /* AJGame+PropertiesExtension.swift */; };
 		27667DE81FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27667DE71FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift */; };
@@ -29,7 +29,7 @@
 		274E36A81FF4E8BD004F35F3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		274E36AB1FF4E8BD004F35F3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		274E36B41FF4EA45004F35F3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = StickyScores/Info.plist; sourceTree = "<group>"; };
-		274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGameCollectionViewController.swift; sourceTree = "<group>"; };
+		274E36B81FF4ED66004F35F3 /* AJScoresCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJScoresCollectionViewController.swift; sourceTree = "<group>"; };
 		274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJGamesTableViewController.swift; sourceTree = "<group>"; };
 		27667DE51FFD0008001058CE /* AJGame+PropertiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AJGame+PropertiesExtension.swift"; sourceTree = "<group>"; };
 		27667DE71FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AJPlayer+PropertiesExtension.swift"; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 				274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */,
 				27667DEB1FFD026C001058CE /* AJDataController.swift */,
 				274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */,
-				274E36B81FF4ED66004F35F3 /* AJGameCollectionViewController.swift */,
+				274E36B81FF4ED66004F35F3 /* AJScoresCollectionViewController.swift */,
 				27667DED1FFD0698001058CE /* PropertyExtensions */,
 				274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */,
 				274E36B31FF4E9B3004F35F3 /* Supporting files */,
@@ -177,7 +177,7 @@
 				27667DEC1FFD026C001058CE /* AJDataController.swift in Sources */,
 				274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */,
 				27667DE81FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift in Sources */,
-				274E36B91FF4ED66004F35F3 /* AJGameCollectionViewController.swift in Sources */,
+				274E36B91FF4ED66004F35F3 /* AJScoresCollectionViewController.swift in Sources */,
 				274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */,
 				274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */,
 			);

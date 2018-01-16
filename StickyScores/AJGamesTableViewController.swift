@@ -87,7 +87,7 @@ class AJGamesTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let navCon = segue.destination as? UINavigationController {
-            if let gameVC = navCon.topViewController as? AJGameCollectionViewController {
+            if let gameVC = navCon.topViewController as? AJScoresCollectionViewController {
                 gameVC.game = nil//selectedGame
             }
         }
