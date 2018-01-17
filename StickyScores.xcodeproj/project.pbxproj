@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2717B771200F79FE00A48DCA /* servishero_loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 2717B770200F79FD00A48DCA /* servishero_loading.json */; };
+		274CEA76200E4E3300CDBC05 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CEA75200E4E3300CDBC05 /* Player.swift */; };
+		274CEA78200E50B900CDBC05 /* AJScoresCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274CEA77200E50B900CDBC05 /* AJScoresCollectionViewLayout.swift */; };
 		274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */; };
 		274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */; };
 		274E36A71FF4E8BD004F35F3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 274E36A51FF4E8BD004F35F3 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2717B770200F79FD00A48DCA /* servishero_loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = servishero_loading.json; sourceTree = "<group>"; };
+		274CEA75200E4E3300CDBC05 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		274CEA77200E50B900CDBC05 /* AJScoresCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AJScoresCollectionViewLayout.swift; sourceTree = "<group>"; };
 		274E36991FF4E8BD004F35F3 /* StickyScores.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StickyScores.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		274E369C1FF4E8BD004F35F3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		274E369F1FF4E8BD004F35F3 /* StickyScores.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StickyScores.xcdatamodel; sourceTree = "<group>"; };
@@ -73,6 +79,9 @@
 				27667DEB1FFD026C001058CE /* AJDataController.swift */,
 				274E36BA1FF4ED88004F35F3 /* AJGamesTableViewController.swift */,
 				274E36B81FF4ED66004F35F3 /* AJScoresCollectionViewController.swift */,
+				274CEA77200E50B900CDBC05 /* AJScoresCollectionViewLayout.swift */,
+				274CEA75200E4E3300CDBC05 /* Player.swift */,
+				2717B770200F79FD00A48DCA /* servishero_loading.json */,
 				27667DED1FFD0698001058CE /* PropertyExtensions */,
 				274E369E1FF4E8BD004F35F3 /* StickyScores.xcdatamodeld */,
 				274E36B31FF4E9B3004F35F3 /* Supporting files */,
@@ -158,6 +167,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2717B771200F79FE00A48DCA /* servishero_loading.json in Resources */,
 				274E36B51FF4EA45004F35F3 /* Info.plist in Resources */,
 				274E36AC1FF4E8BD004F35F3 /* LaunchScreen.storyboard in Resources */,
 				274E36A91FF4E8BD004F35F3 /* Assets.xcassets in Resources */,
@@ -174,11 +184,13 @@
 			files = (
 				27667DE61FFD0008001058CE /* AJGame+PropertiesExtension.swift in Sources */,
 				27667DEA1FFD01DE001058CE /* AJScore+PropertiesExtension.swift in Sources */,
+				274CEA78200E50B900CDBC05 /* AJScoresCollectionViewLayout.swift in Sources */,
 				27667DEC1FFD026C001058CE /* AJDataController.swift in Sources */,
 				274E36BB1FF4ED88004F35F3 /* AJGamesTableViewController.swift in Sources */,
 				27667DE81FFD01CC001058CE /* AJPlayer+PropertiesExtension.swift in Sources */,
 				274E36B91FF4ED66004F35F3 /* AJScoresCollectionViewController.swift in Sources */,
 				274E369D1FF4E8BD004F35F3 /* AppDelegate.swift in Sources */,
+				274CEA76200E4E3300CDBC05 /* Player.swift in Sources */,
 				274E36A01FF4E8BD004F35F3 /* StickyScores.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
